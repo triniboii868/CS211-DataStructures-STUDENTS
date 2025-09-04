@@ -33,3 +33,25 @@ def show():
     for word in temp:
         push(word)
 
+# Main function to run the notepad
+def main():
+    while True:
+        command = input("Enter a command (ADD, UNDO, SHOW, EXIT): ").strip().upper()
+
+        if command.upper() == "UNDO":
+            pop()
+
+        elif command.upper() == "SHOW":
+            show()
+
+        elif command.upper() == "SIZE":
+            print("Current document size:", size())
+
+        elif command.upper() == "EXIT":
+            break
+
+        else:
+            add_word(command)
+
+if __name__ == "__main__":
+    main()
